@@ -7,7 +7,7 @@
  * @license   Proprietary See LICENSE.md
  */
 
-namespace App\src;
+namespace App;
 
 
 class productVariation implements productVariationInterface

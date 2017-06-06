@@ -7,16 +7,27 @@
  * @license   Proprietary See LICENSE.md
  */
 
-namespace App\src;
+namespace App;
 
 
 class product
 {
+    public function __construct($name)
+    {
+        $this->setName($name);
+    }
+
     /**
      * Products Name
      * @var String
      */
     protected $name;
+
+    /**
+     * Products Shortname
+     * @var String
+     */
+    protected $shortName;
 
     /**
      * Products URL
@@ -66,17 +77,12 @@ class product
      */
     protected $newFlag;
 
+
     /**
      * Products Live Flag
      * @var int
      */
     protected $liveFlag;
-
-
-    public function __construct($name)
-    {
-        $this->setName($name);
-    }
 
     /**
      * @return String
@@ -95,6 +101,29 @@ class product
         $this->name = $name;
         return $this;
     }
+
+    /**
+     * @return String
+     */
+    public function getShortName()
+    {
+        if(empty($this->shortName)){
+            $this->setShortName();
+        }
+
+        return $this->shortName;
+    }
+
+    /**
+     * @param String $shortName
+     */
+    public function setShortName()
+    {
+        $this->shortName = preg_replace('[^a-zA-Z\d]', '-', strtolower($this->name));
+    }
+
+
+
 
     /**
      * @return string
