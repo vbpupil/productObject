@@ -10,7 +10,7 @@
 namespace App;
 
 
-class productVariation implements productVariationInterface
+class woodToolVariation implements productVariationInterface
 {
     protected $name;
     protected $costPrice;
@@ -22,9 +22,12 @@ class productVariation implements productVariationInterface
     protected $length;
     protected $height;
     protected $depth;
+    protected $cuttingDepth;
     protected $specialPriceExpiry;
     protected $specialPriceActive;
     protected $barcode;
+    protected $powerRating;
+    protected $decibelRating;
 
     public function __construct($name)
     {
@@ -173,4 +176,57 @@ class productVariation implements productVariationInterface
     {
         return $this->depth;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCuttingDepth()
+    {
+        return $this->cuttingDepth;
+    }
+
+    /**
+     * @param mixed $cuttingDepth
+     */
+    public function setCuttingDepth($cuttingDepth)
+    {
+        $this->cuttingDepth = $cuttingDepth;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPowerRating()
+    {
+        return $this->powerRating;
+    }
+
+    /**
+     * @param mixed $powerRating
+     */
+    public function setPowerRating($powerRating)
+    {
+        $this->powerRating = $powerRating;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDecibelRating()
+    {
+        return $this->decibelRating;
+    }
+
+    /**
+     * @param mixed $decibelRating
+     */
+    public function setDecibelRating($decibelRating)
+    {
+        $this->decibelRating = $decibelRating;
+        return $this;
+    }
+
+
 }
