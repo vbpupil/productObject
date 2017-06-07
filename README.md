@@ -1,3 +1,3 @@
 # Product Object
 
-Simple Product Object 
+A product object with attachable variations.

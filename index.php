@@ -4,7 +4,7 @@ use App\product;
 
 include 'vendor/autoload.php';
 
-product::setUrl('/product/');
+//product::$url = '/product/';
 
 $p = (new \App\product('Wooden Box'))
     ->setShortName()
@@ -15,7 +15,9 @@ $p = (new \App\product('Wooden Box'))
     ->setEstimatedDeliveryTime(2)
     ->setFeatureDescription('This item will fit in a space...')
     ->setNewFlag(1)
-    ->setVideoUrl('https://youtu.be/CPBJgpK0Ulc');
+    ->setVideoUrl('https://youtu.be/CPBJgpK0Ulc')
+    ;
+
 
 
 $v1 = (new \App\generalProductVariation('Small'))
@@ -73,3 +75,6 @@ $p2->addVariation($pv1);
 
 dump($p);
 dump($p2);
+
+dump(product::$url . $p->getShortName());
+dump(product::$url . $p2->getShortName());

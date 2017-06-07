@@ -33,7 +33,7 @@ class product
      * Products URL
      * @var string
      */
-    protected static $url;
+    public static $url = '/product/';
 
     /**
      * Products Short Description
@@ -136,16 +136,7 @@ class product
      */
     public function getUrl()
     {
-        return self::$url;
-    }
-
-    /**
-     * @param string $url
-     * @return product
-     */
-    public static function setUrl($u)
-    {
-        self::$url = $u;
+        return static::$url;
     }
 
     /**
