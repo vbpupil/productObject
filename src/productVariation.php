@@ -12,134 +12,165 @@ namespace App;
 
 class productVariation implements productVariationInterface
 {
+    protected $name;
+    protected $costPrice;
+    protected $specialPrice;
+    protected $productCode;
+    protected $vatCode;
+    protected $weight;
+    protected $width;
+    protected $length;
+    protected $height;
+    protected $depth;
+    protected $specialPriceExpiry;
+    protected $specialPriceActive;
+    protected $barcode;
 
-    public function setName()
+    public function __construct($name)
     {
-        // TODO: Implement setName() method.
+        $this->setName($name);
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
     }
 
     public function getName()
     {
-        // TODO: Implement getName() method.
+        return $this->name;
     }
 
-    public function setCostPrice()
+    public function setCostPrice($cost)
     {
-        // TODO: Implement setCostPrice() method.
+        $this->costPrice = $cost;
+        return $this;
     }
 
     public function getCostPrice()
     {
-        // TODO: Implement getCostPrice() method.
+        return $this->costPrice;
     }
 
-    public function setSpecialPrice()
+    public function setSpecialPrice($price)
     {
-        // TODO: Implement setSpecialPrice() method.
+        $this->specialPrice = $price;
+        return $this;
     }
 
     public function getSpecialPrice()
     {
-        // TODO: Implement getSpecialPrice() method.
+        return $this->specialPrice;
     }
 
-    public function setSpecialPriceExpiry()
+    public function setSpecialPriceExpiry($specialPriceExpiry)
     {
-        // TODO: Implement setSpecialPriceExpiry() method.
+        $this->specialPriceExpiry = $specialPriceExpiry;
+        return $this;
     }
 
     public function getSpecialPriceExpiry()
     {
-        // TODO: Implement getSpecialPriceExpiry() method.
+        return $this->specialPriceExpiry;
     }
 
-    public function setSpecialPriceActive()
+    public function setSpecialPriceActive($specialPriceActive)
     {
-        // TODO: Implement setSpecialPriceActive() method.
+        $this->specialPriceActive = $specialPriceActive;
+        return $this;
     }
 
     public function getSpecialPriceActive()
     {
-        // TODO: Implement getSpecialPriceActive() method.
+        return $this->specialPriceActive;
     }
 
-    public function setBarcode()
+    public function setBarcode($barcode)
     {
-        // TODO: Implement setBarcode() method.
+        $this->barcode = $barcode;
+        return $this;
     }
 
     public function getBarcode()
     {
-        // TODO: Implement getBarcode() method.
+        return $this->barcode;
     }
 
-    public function setProductCode()
+    public function setProductCode($code)
     {
-        // TODO: Implement setProductCode() method.
+        $this->productCode = $code;
+        return $this;
     }
 
     public function getProductCode()
     {
-        // TODO: Implement getProductCode() method.
+        return $this->productCode;
     }
 
-    public function setVatCode()
+    public function setVatCode($code)
     {
-        // TODO: Implement setVatCode() method.
+        $this->vatCode = $code;
+        return $this;
     }
 
     public function getVatCode()
     {
-        // TODO: Implement getVatCode() method.
+        return $this->vatCode;
     }
 
-    public function setWeight()
+    public function setWeight($weight)
     {
-        // TODO: Implement setWeight() method.
+        $this->weight = $weight;
+        return $this;
     }
 
     public function getWeight()
     {
-        // TODO: Implement getWeight() method.
+        return $this->weight;
     }
 
-    public function setWidth()
+    public function setWidth($width)
     {
-        // TODO: Implement setWidth() method.
+        $this->width = $width;
+        return $this;
     }
 
     public function getWidth()
     {
-        // TODO: Implement getWidth() method.
+        return $this->width;
     }
 
-    public function setLength()
+    public function setLength($length)
     {
-        // TODO: Implement setLength() method.
+        $this->length = $length;
+        return $this;
     }
 
     public function getLength()
     {
-        // TODO: Implement getLength() method.
+        return $this->length;
     }
 
-    public function setHeight()
+    public function setHeight($height)
     {
-        // TODO: Implement setHeight() method.
+        $this->height = $height;
+        return $this;
     }
 
     public function getHeight()
     {
-        // TODO: Implement getHeight() method.
+        return $this->height;
     }
 
-    public function setDepth()
+    public function setDepth($depth)
     {
-        // TODO: Implement setDepth() method.
+        $this->depth = $depth;
+        return $this;
     }
 
     public function getDepth()
     {
-        // TODO: Implement getDepth() method.
+        return $this->depth;
     }
 }

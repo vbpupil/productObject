@@ -33,7 +33,7 @@ class product
      * Products URL
      * @var string
      */
-    protected $url;
+    protected static $url;
 
     /**
      * Products Short Description
@@ -84,6 +84,8 @@ class product
      */
     protected $liveFlag;
 
+    protected $variations;
+
     /**
      * @return String
      */
@@ -105,42 +107,45 @@ class product
     /**
      * @return String
      */
-    public function getShortName()
+    public function getShortName($shortname=null)
     {
         if(empty($this->shortName)){
-            $this->setShortName();
+            $this->setShortName($shortname);
         }
 
         return $this->shortName;
     }
 
     /**
+     * Sets Product Shortname for url
      * @param String $shortName
      */
-    public function setShortName()
+    public function setShortName($shortname=null)
     {
-        $this->shortName = preg_replace('[^a-zA-Z\d]', '-', strtolower($this->name));
+        $this->shortName = preg_replace(
+            '([^a-zA-Z\d])',
+            '-',
+            strtolower(  ($shortname ? $shortname : $this->name) )
+        );
+
+        return $this;
     }
-
-
-
 
     /**
      * @return string
      */
     public function getUrl()
     {
-        return $this->url;
+        return self::$url;
     }
 
     /**
      * @param string $url
      * @return product
      */
-    public function setUrl($url)
+    public static function setUrl($u)
     {
-        $this->url = $url;
-        return $this;
+        self::$url = $u;
     }
 
     /**
@@ -245,9 +250,9 @@ class product
      * @param string $estimatedDeliveryTime
      * @return product
      */
-    public function setEstimatedDeliveryTime($estimatedDeliveryTime)
+    public function setEstimatedDeliveryTime($days)
     {
-        $this->estimatedDeliveryTime = $estimatedDeliveryTime;
+        $this->estimatedDeliveryTime = $days;
         return $this;
     }
 
@@ -288,6 +293,7 @@ class product
     }
 
     public function addVariation(productVariationInterface $variation){
-
+        $this->variations[] = $variation;
+        return $this;
     }
 }

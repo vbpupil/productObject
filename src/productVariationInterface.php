@@ -13,31 +13,43 @@ namespace App;
 interface productVariationInterface
 {
 
-    public function setName();
+    public function setName($name);
     public function getName();
-    public function setCostPrice();
+
+    public function setCostPrice($cost);
     public function getCostPrice();
-    public function setSpecialPrice();
+
+    public function setSpecialPrice($price);
     public function getSpecialPrice();
-    public function setSpecialPriceExpiry();
+
+    public function setSpecialPriceExpiry($expiry);
     public function getSpecialPriceExpiry();
-    public function setSpecialPriceActive();
+
+    public function setSpecialPriceActive($active);
     public function getSpecialPriceActive();
-    public function setBarcode();
+
+    public function setBarcode($barcode);
     public function getBarcode();
-    public function setProductCode();
+
+    public function setProductCode($code);
     public function getProductCode();
-    public function setVatCode();
+
+    public function setVatCode($code);
     public function getVatCode();
-    public function setWeight();
+
+    public function setWeight($weight);
     public function getWeight();
-    public function setWidth();
+
+    public function setWidth($width);
     public function getWidth();
-    public function setLength();
+
+    public function setLength($length);
     public function getLength();
-    public function setHeight();
+
+    public function setHeight($height);
     public function getHeight();
-    public function setDepth();
+
+    public function setDepth($depth);
     public function getDepth();
 
 
