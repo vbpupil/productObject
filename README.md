@@ -10,7 +10,6 @@ use App\product;
 
 include 'vendor/autoload.php';
 
-
 $p = (new \App\product('Wooden Box'))
     ->setShortName()
     ->setLiveFlag(1)
@@ -22,8 +21,6 @@ $p = (new \App\product('Wooden Box'))
     ->setNewFlag(1)
     ->setVideoUrl('https://youtu.be/CPBJgpK0Ulc')
     ;
-
-
 
 $v1 = (new \App\generalProductVariation('Small'))
     ->setBarcode('801123487')
