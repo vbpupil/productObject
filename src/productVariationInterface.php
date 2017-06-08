@@ -52,7 +52,8 @@ interface productVariationInterface
     public function setDepth($depth);
     public function getDepth();
 
-
+    public function addImage(abstractImage $image);
+    public function getImages();
 
 
 }

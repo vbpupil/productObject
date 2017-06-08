@@ -18,8 +18,6 @@ $p = (new \App\product('Wooden Box'))
     ->setVideoUrl('https://youtu.be/CPBJgpK0Ulc')
     ;
 
-
-
 $v1 = (new \App\generalProductVariation('Small'))
     ->setBarcode('801123487')
     ->setProductCode('123456')
@@ -28,7 +26,14 @@ $v1 = (new \App\generalProductVariation('Small'))
     ->setHeight('20')
     ->setLength('20')
     ->setWidth('50')
-    ->setWeight('100');
+    ->setWeight('100')
+    ->addImage(
+        (new \App\productImage())
+        ->setName('top.twenty.black.box.jpg'))
+    ->addImage(
+        (new \App\productImage())
+            ->setName('34_17-box.jpg'))
+    ;
 
 $v2 = (new \App\generalProductVariation('Medium'))
     ->setBarcode('502223433')
@@ -40,10 +45,8 @@ $v2 = (new \App\generalProductVariation('Medium'))
     ->setWidth('50')
     ->setWeight('100');
 
-
 $p->addVariation($v1)
     ->addVariation($v2);
-
 
 $p2 = (new \App\product('Circular Saw'))
     ->setShortName()
@@ -55,7 +58,6 @@ $p2 = (new \App\product('Circular Saw'))
     ->setFeatureDescription('This item will fit in a space...')
     ->setNewFlag(1)
     ->setVideoUrl('https://youtu.be/CPBJgpK0Ulc');
-
 
 $pv1 = (new \App\woodToolVariation('12 Inch'))
     ->setBarcode('801123487')
@@ -71,6 +73,8 @@ $pv1 = (new \App\woodToolVariation('12 Inch'))
     ->setCuttingDepth(8);
 
 $p2->addVariation($pv1);
+
+
 
 
 dump($p);

@@ -25,6 +25,7 @@ class generalProductVariation implements productVariationInterface
     protected $specialPriceExpiry;
     protected $specialPriceActive;
     protected $barcode;
+    protected $images = [];
 
     public function __construct($name)
     {
@@ -172,5 +173,16 @@ class generalProductVariation implements productVariationInterface
     public function getDepth()
     {
         return $this->depth;
+    }
+
+    public function addImage(abstractImage $image)
+    {
+        $this->images[] = $image;
+        return $this;
+    }
+
+    public function getImages()
+    {
+        return $this->images;
     }
 }

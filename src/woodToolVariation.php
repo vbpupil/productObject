@@ -28,6 +28,7 @@ class woodToolVariation implements productVariationInterface
     protected $barcode;
     protected $powerRating;
     protected $decibelRating;
+    protected $images = [];
 
     public function __construct($name)
     {
@@ -229,4 +230,14 @@ class woodToolVariation implements productVariationInterface
     }
 
 
+    public function addImage(abstractImage $image)
+    {
+        $this->images[] = $image;
+        return $this;
+    }
+
+    public function getImages()
+    {
+        return $this->images;
+    }
 }
