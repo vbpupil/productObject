@@ -10,79 +10,28 @@
 namespace App;
 
 
-class product
+class product implements AttributableInterface
 {
-    public function __construct($name)
+    /**
+     * @var Attributes
+     */
+    protected $attributes;
+
+    protected $requiredAttributes = [];
+
+
+    public function __construct($id, Attributes $attributes)
     {
-        $this->setName($name);
+        foreach ($attributes->getAttrs() as $k => $v){
+            $this->$k = $v;
+        }
     }
-
-    /**
-     * Products Name
-     * @var String
-     */
-    protected $name;
-
-    /**
-     * Products Shortname
-     * @var String
-     */
-    protected $shortName;
 
     /**
      * Products URL
      * @var string
      */
     public static $url = '/product/';
-
-    /**
-     * Products Short Description
-     * @var string
-     */
-    protected $shortDescription;
-
-    /**
-     * Products Long Description
-     * @var string
-     */
-    protected $longDescription;
-
-    /**
-     * Products Feature Description
-     * @var string
-     */
-    protected $featureDescription;
-
-    /**
-     * Products Specification Description
-     * @var string
-     */
-    protected $specificationDescription;
-
-    /**
-     * Products Video URL ie Youtube/Vimeo
-     * @var string
-     */
-    protected $videoUrl;
-
-    /**
-     * Products Estimated Delivery
-     * @var string
-     */
-    protected $estimatedDeliveryTime;
-
-    /**
-     * Products New Flag
-     * @var int
-     */
-    protected $newFlag;
-
-
-    /**
-     * Products Live Flag
-     * @var int
-     */
-    protected $liveFlag;
 
     protected $variations;
 
@@ -286,5 +235,15 @@ class product
     public function addVariation(productVariationInterface $variation){
         $this->variations[] = $variation;
         return $this;
+    }
+
+    public function getAttribute($name)
+    {
+        // TODO: Implement getAttribute() method.
+    }
+
+    public function setAttribute($name, Attribute $value)
+    {
+        // TODO: Implement setAttribute() method.
     }
 }
