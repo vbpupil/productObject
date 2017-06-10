@@ -10,26 +10,23 @@
 namespace App;
 
 
-class generalProductVariation implements productVariationInterface
+class generalProductVariation implements productVariationInterface, AttributableInterface
 {
-    protected $name;
-    protected $costPrice;
-    protected $specialPrice;
-    protected $productCode;
-    protected $vatCode;
-    protected $weight;
-    protected $width;
-    protected $length;
-    protected $height;
-    protected $depth;
-    protected $specialPriceExpiry;
-    protected $specialPriceActive;
-    protected $barcode;
     protected $images = [];
 
-    public function __construct($name)
+    /**
+     * @var Attributes
+     */
+    protected $attributes;
+
+    protected $requiredAttributes = [];
+
+
+    public function __construct($id, Attributes $attributes)
     {
-        $this->setName($name);
+        foreach ($attributes->getAttrs() as $k => $v){
+            $this->$k = $v;
+        }
     }
 
     public function setName($name)
@@ -184,5 +181,15 @@ class generalProductVariation implements productVariationInterface
     public function getImages()
     {
         return $this->images;
+    }
+
+    public function getAttribute($name)
+    {
+        // TODO: Implement getAttribute() method.
+    }
+
+    public function setAttribute($name, Attribute $value)
+    {
+        // TODO: Implement setAttribute() method.
     }
 }

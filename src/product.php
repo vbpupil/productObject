@@ -17,11 +17,29 @@ class product implements AttributableInterface
      */
     protected $attributes;
 
-    protected $requiredAttributes = [];
+    protected $requiredAttributes = ['name'];
 
 
     public function __construct($id, Attributes $attributes)
     {
+        $err = [];
+        $fail = 0;
+
+        //check that we have all requiredAttributes
+        foreach ($this->requiredAttributes as $required) {
+            if( !array_key_exists($required,$this->attributes) ){
+                $err[] = "Missing $required Attribute";
+                $fail = 1;
+            }
+        }
+
+        if($fail){
+            dump($err);
+            return false;
+        }
+
+
+        //check that this is an associative array
         foreach ($attributes->getAttrs() as $k => $v){
             $this->$k = $v;
         }
@@ -244,6 +262,11 @@ class product implements AttributableInterface
 
     public function setAttribute($name, Attribute $value)
     {
-        // TODO: Implement setAttribute() method.
+        if(!$this->$name) {
+            dump("Error $name Attribute, does not exist");
+            // todo throw exception
+        }
+
+        $this->$name = $value->getValue();
     }
 }
