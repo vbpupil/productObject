@@ -15,6 +15,7 @@ abstract class abstractImage
     protected $type;
     protected $location;
 
+
     /**
      * @param $name
      * @return $this
@@ -26,16 +27,25 @@ abstract class abstractImage
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getLocation()
     {
         return $this->location;
     }
 
+    /**
+     * @return $this
+     */
     public function getName(){
         $this->name;
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function setType()
     {
         $this->type = substr($this->name, (strrpos($this->name, '.')+1));
@@ -49,6 +59,7 @@ abstract class abstractImage
     {
         return $this->type;
     }
+
 
     public function setAsDefault($id)
     {

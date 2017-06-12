@@ -19,7 +19,11 @@ class product implements AttributableInterface
 
     protected $requiredAttributes = ['name'];
 
-
+    /**
+     * product constructor.
+     * @param $id
+     * @param Attributes $attributes
+     */
     public function __construct($id, Attributes $attributes)
     {
         $err = [];
@@ -27,7 +31,7 @@ class product implements AttributableInterface
 
         //check that we have all requiredAttributes
         foreach ($this->requiredAttributes as $required) {
-            if( !array_key_exists($required,$this->attributes) ){
+            if( !array_key_exists($required,$attributes->getAttrs()) ){
                 $err[] = "Missing $required Attribute";
                 $fail = 1;
             }
@@ -51,6 +55,9 @@ class product implements AttributableInterface
      */
     public static $url = '/product/';
 
+    /*
+     * @var array
+     */
     protected $variations;
 
     /**
@@ -250,16 +257,27 @@ class product implements AttributableInterface
         return $this;
     }
 
+    /**
+     * @param productVariationInterface $variation
+     * @return $this
+     */
     public function addVariation(productVariationInterface $variation){
         $this->variations[] = $variation;
         return $this;
     }
 
+    /**
+     * @param $name
+     */
     public function getAttribute($name)
     {
         // TODO: Implement getAttribute() method.
     }
 
+    /**#
+     * @param $name
+     * @param Attribute $value
+     */
     public function setAttribute($name, Attribute $value)
     {
         if(!$this->$name) {

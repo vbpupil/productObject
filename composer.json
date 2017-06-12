@@ -5,6 +5,13 @@
     }
   },
   "require": {
-    "symfony/var-dumper": "^3.3"
-  }
+    "symfony/var-dumper": "^3.3",
+    "vbpupil/attributes": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url":  "git@github.com:vbpupil/attributes.git"
+    }
+  ]
 }
