@@ -1,4 +1,13 @@
 {
+  "name" : "vbpupil/productObject",
+  "php": ">=5.6.0",
+  "description": "Product object which employs variation attributes",
+  "authors" : [
+      {
+        "name": "Dean Haines",
+        "email": "vbpupil@gmail.com"
+      }
+    ],
   "autoload" : {
     "psr-4" :{
       "App\\" : "src"

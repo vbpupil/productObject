@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "36b80bed2da56ae71539c5de53522393",
-    "content-hash": "664b06751245041d9a00c4ae19dbd13e",
+    "content-hash": "76350a900748d68c974f2d9b692cdb60",
     "packages": [
         {
             "name": "symfony/polyfill-mbstring",
@@ -64,7 +63,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -132,7 +131,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-06-02 09:10:29"
+            "time": "2017-06-02T09:10:29+00:00"
         },
         {
             "name": "vbpupil/attributes",
@@ -140,23 +139,32 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vbpupil/attributes.git",
-                "reference": "fba5046c4a6d7c28382da6aa45c95158e33cc3ac"
+                "reference": "4ce448d76f3a453c890b7233238034f49db58099"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vbpupil/attributes/zipball/fba5046c4a6d7c28382da6aa45c95158e33cc3ac",
-                "reference": "fba5046c4a6d7c28382da6aa45c95158e33cc3ac",
+                "url": "https://api.github.com/repos/vbpupil/attributes/zipball/4ce448d76f3a453c890b7233238034f49db58099",
+                "reference": "4ce448d76f3a453c890b7233238034f49db58099",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
-                "psr-4": []
+                "psr-4": {
+                    "App\\": "src"
+                }
             },
+            "authors": [
+                {
+                    "name": "Dean Haines",
+                    "email": "vbpupil@gmail.com"
+                }
+            ],
+            "description": "Attribute mechanism via associative arrays",
             "support": {
                 "source": "https://github.com/vbpupil/attributes/tree/master",
                 "issues": "https://github.com/vbpupil/attributes/issues"
             },
-            "time": "2017-06-12 08:14:54"
+            "time": "2017-06-12 12:40:26"
         }
     ],
     "packages-dev": [],
